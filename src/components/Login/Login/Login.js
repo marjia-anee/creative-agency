@@ -41,7 +41,7 @@ const Login = () => {
             <div>
                 <img style={{ height: '60px', textAlign: 'center', marginLeft: '40%'}} src={logo} alt=""/>
             </div>
-            <div className="login-form row align-items-center m-5 p-5">
+            <div className="login-form row align-items-center p-5">
                     <h1 className = "text-center">Login With</h1>
           
                     <button onClick={handleGoogleSignIn} className="google-button ">
