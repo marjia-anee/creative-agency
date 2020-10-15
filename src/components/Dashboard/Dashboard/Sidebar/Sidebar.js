@@ -11,12 +11,12 @@ const Sidebar = () => {
             <ul className="list-unstyled">
             <li>
                     <Link to="/dashboard/order">
-                       <span>Add Order</span>
+                       <span>Order</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/orderList">
-                         <span>Your Order List</span>
+                    <Link to="/dashboard/serviceList">
+                         <span>Service List</span>
                     </Link>
                 </li>
                 <li>
@@ -26,9 +26,9 @@ const Sidebar = () => {
                 </li>
                
             </ul>
-            <div>
+            {/* <div>
                 <Link to="/"> <span>Logout</span></Link>
-            </div>
+            </div> */}
         </div>
     );
 };

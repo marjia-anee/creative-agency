@@ -31,7 +31,7 @@ const OrderForm = () => {
     }
     
     return (
-        <div className="row">
+        <div>
                 
             <div style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }} className="container-fluid row">
                 
