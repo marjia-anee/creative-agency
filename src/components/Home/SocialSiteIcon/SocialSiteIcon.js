@@ -8,14 +8,28 @@ import airbnb from '../../../images/logos/airbnb.png';
 
 const SocialSiteIcon = () => {
     return (
-        <div className = "row col-md-2 offset-md-1">
-            <div className="d-flex align-items-center m-5 p-5">
+        <div className = "container">
+            <div className="d-flex justify-content-center m-5 p-3">
+                <div className="col-md-3 d-flex justify-content-center">
+                <img style={{width: '50%', height: '40px'}} src={slack} alt=""/>
 
-                <img style={{width: '140px', height: '36px'}} src={slack} alt=""/>
-                <img style={{width: '140px', height: '36px'}} src={google} alt=""/>
-                <img style={{width: '140px', height: '36px'}} src={uber} alt=""/>
-                <img style={{width: '140px', height: '36px'}} src={netflix} alt=""/>
-                <img style={{width: '140px', height: '36px'}} src={airbnb} alt=""/>
+                </div>
+                <div className="col-md-3 d-flex justify-content-center">
+                <img style={{width: '140px', height: '40px'}} src={google} alt=""/>
+
+                </div>
+                <div className="col-md-3 d-flex justify-content-center">
+                <img style={{width: '140px', height: '40px'}} src={uber} alt=""/>
+
+                </div>
+                <div className="col-md-3 d-flex justify-content-center">
+                <img style={{width: '140px', height: '40px'}} src={netflix} alt=""/>
+
+                </div>
+                <div className="col-md-3">
+                <img style={{width: '140px', height: '40px'}} src={airbnb} alt=""/>
+
+                </div>
 
             </div>
             

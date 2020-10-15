@@ -9,26 +9,22 @@ const Sidebar = () => {
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
             <ul className="list-unstyled">
-                <li>
-                    <Link to="/orderForm/dashboard">
+            <li>
+                    <Link to="/dashboard/order">
+                       <span>Add Order</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/serviceList/dashboard">
+                    <Link to="/dashboard/orderList">
+                         <span>Your Order List</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/reviewForm/dashboard">
+                    <Link to="/dashboard/review">
+                         <span>Review</span>
                     </Link>
                 </li>
-                {/* <li>
-                    <Link to="/doctor/prescriptions" className="text-white">
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/doctor/setting" className="text-white" >
-                    </Link>
-                </li> */}
+               
             </ul>
             <div>
                 <Link to="/"> <span>Logout</span></Link>

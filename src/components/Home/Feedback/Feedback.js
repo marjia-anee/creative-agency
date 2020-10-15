@@ -28,8 +28,12 @@ const clientFeedback = [
 
 const Feedback = () => {
     return (
-        <section className="d-flex justify-content-center container">
-            <div className = "row">
+        <section className="container mt-5">
+            <div>
+            <h2 className = "text-center">Clients <span className="text-success"> Feedback</span></h2>
+
+            </div>
+            <div className = "row d-flex justify-content-center">
             {
                 clientFeedback.map(info => <FeedbackDetails info={info}></FeedbackDetails>)
             }

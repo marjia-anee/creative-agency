@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
-import OrderForm from './Sidebar/OrderForm/OrderForm';
-import ReviewForm from './Sidebar/ReviewForm/ReviewForm';
-import ServiceList from './Sidebar/ServiceList/ServiceList';
+import OrderForm from './OrderForm/OrderForm';
 import Sidebar from './Sidebar/Sidebar';
 import logo from '../../../images/logos/logo.png';
 import { UserContext } from '../../../App';
@@ -20,23 +18,19 @@ const Dashboard = () => {
 
     return (
         <section>
+        <p>Name: {loggedInUser.name}</p>
+
             <div className="container-fluid row">
                 <div className="col-md-3">
                 <img style={{ height: '60px', textAlign: 'center', marginLeft: '10%'}} src={logo} alt=""/>
 
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-6 d-flex justify-content-center">
-                <OrderForm></OrderForm>
-                <ServiceList></ServiceList>
-                <ReviewForm></ReviewForm>
-
-                </div>
-                <div className="col-md-3">
-                <p>Name: {loggedInUser.name}</p>
-
-                </div>
-            </div>
+                <div className="col-md-8">
+                    <h3>Order</h3>
+                    <OrderForm></OrderForm>
+               </div> 
+            </div>    
         </section>
     );
 };
