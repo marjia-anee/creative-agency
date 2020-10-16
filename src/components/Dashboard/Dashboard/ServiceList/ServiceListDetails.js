@@ -12,7 +12,7 @@ const ServiceListDetails = ({order}) => {
                         {
                             order.image ? <img style={{ borderRadius: '50px' }} width="60" src={`data:image/png;base64,${order.image.img}`} />
                                 :
-                                <img style={{ borderRadius: '50px' }} width="60" className="img-fluid mb-3" src={`http://localhost:5000/${order.img}`} alt="" />
+                                <img style={{ borderRadius: '50px' }} width="60" className="img-fluid mb-3" src={`https://nameless-harbor-12344.herokuapp.com/${order.img}`} alt="" />
                         }
            
                     </div>

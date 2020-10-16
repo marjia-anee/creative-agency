@@ -29,7 +29,7 @@ const NewService = () => {
 
 
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://nameless-harbor-12344.herokuapp.com/addService', {
             
             method:'POST',
             body:formData

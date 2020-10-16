@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Sidebar from '../Dashboard/Dashboard/Sidebar/Sidebar';
 import logo from '../../images/logos/logo.png';
+import {useTransition, animated} from 'react-spring'
+
 
 const Admin = () => {
     const { register, errors, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://nameless-harbor-12344.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,6 +21,14 @@ const Admin = () => {
                 
             })
     };
+
+
+        const [show, set] = useState(false)
+        const transitions = useTransition(show, null, {
+        from: { position: 'absolute', opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        })
 
     return (
         <section>
@@ -37,6 +47,12 @@ const Admin = () => {
                                 {errors.email && <span>your email is required<br /></span>}
                                 <button className= "btn btn-primary">Submit</button>
                             </form>
+
+                            {/* <div>
+                            {transitions.map(({ item, key, props }) =>
+item && <animated.div key={key} style={props}>✌️</animated.div>
+)}
+                            </div> */}
                         </div>
                     
                 </div>

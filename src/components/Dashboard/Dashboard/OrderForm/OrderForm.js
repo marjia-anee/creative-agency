@@ -35,7 +35,7 @@ const OrderForm = () => {
 
 
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://nameless-harbor-12344.herokuapp.com/addOrder', {
             
             method:'POST',
             body:formData

@@ -13,7 +13,7 @@ const ReviewForm = () => {
     const onSubmit = data => {
         const reviewData = {...data, ...loggedInUser}
 
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://nameless-harbor-12344.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

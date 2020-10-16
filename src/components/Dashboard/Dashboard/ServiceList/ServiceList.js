@@ -14,7 +14,7 @@ const ServiceList = () => {
 
   useEffect(() => {
 
-      fetch('http://localhost:5000/showOrders?email=' + loggedInUser.email)
+      fetch('https://nameless-harbor-12344.herokuapp.com/showOrders?email=' + loggedInUser.email)
           .then(res => res.json())
           .then(data => setOrders(data))
   }, [])
