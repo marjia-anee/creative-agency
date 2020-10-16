@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -12,6 +12,10 @@ import Login from './components/Login/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import ReviewForm from './components/Dashboard/Dashboard/ReviewForm/ReviewForm';
 import ServiceList from './components/Dashboard/Dashboard/ServiceList/ServiceList';
+import NewService from './components/Dashboard/Dashboard/NewService/NewService';
+import Admin from './components/Admin/Admin';
+import ShowServiceList from './components/Dashboard/ShowServiceList/ShowServiceList';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -19,45 +23,42 @@ export const UserContext = createContext();
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [info, setInfo] = useState({});
-
-  useEffect(()=>{
-
-  const sessionData=sessionStorage.getItem('token')
-  const token=JSON.parse(sessionData)
-  token && fetch('http://localhost:3001',{
-    method:'GET',
-    headers:{ 
-      'Content-Type':'application/json',
-      token:token
-    }
-  })
-  .then(res=>res.json())
-  .then(result=>{
-    setInfo({...info,user:{name:result.name, email:result.email, img:result.picture}})
-  })
-  },[])
-
 
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser, info, setInfo]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Switch>
+      <Route path="/home">
+            <Home></Home>
+          </Route>
         <Route exact path="/">
           <Home></Home>
         </Route>
         <Route exact path="/login">
             <Login></Login>
           </Route>
-          <Route exact path="/dashboard/order">
+          <PrivateRoute exact path="/dashboard/order">
             <Dashboard></Dashboard>
-          </Route>
-          <Route exact path='/dashboard/review'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/dashboard/review'>
             <ReviewForm></ReviewForm>
-          </Route>
-          <Route exact path='/dashboard/serviceList'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/dashboard/serviceList'>
             <ServiceList></ServiceList>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute exact path='/serviceAdd'>
+            <NewService></NewService>
+          </PrivateRoute>
+          <PrivateRoute path='/service/item/:_id'>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/allOrderList">
+            <ShowServiceList></ShowServiceList>
+          </PrivateRoute>
+          <PrivateRoute path="/addAdmin">
+            <Admin></Admin>
+          </PrivateRoute>
+          
       </Switch>
     </Router>
 

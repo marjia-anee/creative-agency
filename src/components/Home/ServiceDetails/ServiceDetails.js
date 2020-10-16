@@ -1,31 +1,21 @@
-import React, { useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { UserContext } from '../../../App';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceDetails = ({service}) => {
-
-    const [details,setDetails]=useContext(UserContext)
-
-    const history=useHistory()
-
-    const handleServiceDetails = () => {
-
-        setDetails({...details, service:service})
-        
-        history.push('/dashboard/order')
-    }
     return (
-        <div onClick={handleServiceDetails} style={{boxShadow: '0px 4px 80px rgba(0, 0, 0, 0.1)',
-            borderRadius: '10px', width: '300px',height: '300px'}} 
-            className = "col-md-4 text-center mt-5 mb-5 p-4 mx-auto">
-            
-            <img style= {{height:'80px'}} src={`data:${service.img.contentType};base64,${service.img.img}`} alt=""/>
-            
-            <h5 className="mt-3">{service.serviceTitle}</h5>
-            <br/>
-            <p className= "text-secondary">{service.projectDetails}</p>
-           
-        </div>
+      
+        <div style={{padding: '20px 40px', boxShadow: '10px 10px 40px rgba(0, 0, 0, 0.1)',textDecoration: 'none',}}  className="col-md-4 text-center">
+        <Link to={`/service/item/${service._id}`}>
+            <img style={{ height: '80px' }} src={service.img} alt="" />
+            {
+                service.image ? <img style={{ height: '80px' }} src={`data:image/png;base64,${service.image.img}`} />
+                    :
+                    <img style={{ height: '80px' }} className="img-fluid mb-3" src={`http://localhost:5000/${service.img}`} alt="" />
+            }
+            <h5 className="mt-3 mb-3">{service.serviceTitle}</h5>
+            <p className="text-secondary">{service.projectDetails}</p>
+        </Link>
+    </div>
         
     );
 };

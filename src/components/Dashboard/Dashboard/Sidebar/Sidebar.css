@@ -1,15 +1,19 @@
-
-.sidebar li{
-    text-decoration: none;
+.sidebar{
+    position: fixed;
+    height: 80vh;
+    text-decoration: none !important;
     color: black!important; ;
     margin-bottom: 2em;
     font-weight: bold;
+    
 }
-.sidebar li:hover span{
+
+/* .span:hover{
     display: inline-block;
     color: #009444;
     transform: translate(3px);
-}
+} */
 .sidebar svg{
     margin-right: 5px;
+    margin-left: 5px;
 }

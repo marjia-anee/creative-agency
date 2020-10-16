@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <section className="footer-container">
+        <div className = "footer-container">
             <div className = "row m-5">
                 <div className="col-md-6 mt-5">
                     <h2> <b> Let us handle your <br/> project, professionally.</b> </h2>
@@ -22,10 +22,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center my-auto">
+            <div className="text-center mt-5">
                 <small >Copyright {(new Date()).getFullYear()} All Rights Reserved</small>
             </div>
-        </section>
+        </div>
     );
 };
 

@@ -20,12 +20,12 @@ const Services = () => {
     
 
     return (
-        <section className = "container mt-5 mb-5">
+        <section style={{marginTop: '12%', marginBottom: '20%'}} className = "container">
             <div className = "text-center">
                 <h3>Provide awesome <span className="text-success"> services</span></h3>
             </div>
             <div className="d-flex justify-content-center">
-            <div className = "row mt-5">
+            <div className = "row w-75 mt-5 pt-5">
                 {
                     serviceData.map(service => <ServiceDetails key={service._id} service={service}></ServiceDetails>)
                 }

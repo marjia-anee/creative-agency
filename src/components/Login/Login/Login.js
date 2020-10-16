@@ -6,10 +6,15 @@ import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png';
 import googleIcon from '../../../images/google.png';
 import './Login.css';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
     if(firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
@@ -23,9 +28,11 @@ const Login = () => {
       
         firebase.auth().signInWithPopup(provider).then(function(result) {
             
-            const {displayName, email} = result.user;
-            const signedInUser = {name: displayName, email}
+            const {displayName, email, photoURL} = result.user;
+            const signedInUser = {name: displayName, email, img: photoURL}
             setLoggedInUser(signedInUser);
+            storeAuthToken();
+
           })
           .catch(function(error) {
             var errorCode = error.code;
@@ -36,12 +43,25 @@ const Login = () => {
           });
 
     }
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(true)
+          .then(function (idToken) {
+            sessionStorage.setItem('token', idToken);
+            history.replace(from);
+          }).catch(function (error) {
+            // Handle error
+          });
+      }
+
+
     return (
         <div>
             <div>
                 <img style={{ height: '60px', textAlign: 'center', marginLeft: '40%'}} src={logo} alt=""/>
             </div>
-            <div className="login-form row align-items-center p-5">
+            <section className = "container">
+            <div className=" col md-12 login-form row align-items-center p-5">
                     <h1 className = "text-center">Login With</h1>
           
                     <button onClick={handleGoogleSignIn} className="google-button ">
@@ -49,9 +69,10 @@ const Login = () => {
                      Continue with Google</button>
                      <br />
                     <br />
-                    <p>Don't have an account? <a href="/">Create an account</a></p>  
+                    <p className="text-secondary">Don't have an account? <a href="/">Create an account</a></p>  
         
             </div>
+            </section>
         </div>
     );
 };

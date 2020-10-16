@@ -8,25 +8,25 @@ import airbnb from '../../../images/logos/airbnb.png';
 
 const SocialSiteIcon = () => {
     return (
-        <div className = "container">
+        <div className = "container mb-3">
             <div className="d-flex justify-content-center m-5 p-3">
                 <div className="col-md-3 d-flex justify-content-center">
-                <img style={{width: '50%', height: '40px'}} src={slack} alt=""/>
+                <img style={{width: '140px', height: '40px'}} src={slack} alt=""/>
 
                 </div>
-                <div className="col-md-3 d-flex justify-content-center">
+                <div className="col-md-3 img-fluid d-flex justify-content-center">
                 <img style={{width: '140px', height: '40px'}} src={google} alt=""/>
 
                 </div>
-                <div className="col-md-3 d-flex justify-content-center">
+                <div className="col-md-3 img-fluid d-flex justify-content-center">
                 <img style={{width: '140px', height: '40px'}} src={uber} alt=""/>
 
                 </div>
-                <div className="col-md-3 d-flex justify-content-center">
+                <div className="col-md-3 img-fluid d-flex justify-content-center">
                 <img style={{width: '140px', height: '40px'}} src={netflix} alt=""/>
 
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 img-fluid d-flex justify-content-center">
                 <img style={{width: '140px', height: '40px'}} src={airbnb} alt=""/>
 
                 </div>

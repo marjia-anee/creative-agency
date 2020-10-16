@@ -12,8 +12,8 @@ import img5 from '../../../images/carousel-5.png';
 const CarouselPart = () => {
     return (
             <section style={{width: '100%',
-            height: '100%', background: '#111430',backgroundSize: 'cover'
-        }} className="mt-5 p-5">
+            height: '100%', background: '#111430',backgroundSize: 'cover',marginBottom: '10%'
+        }} className="mt-5 p-5 ">
                 <div  className = "m-3 p-2">
                     <h2 className="text-center" style={{color: 'white',}}>Here are some of <span className="text-success"> our works</span></h2>
                 </div>

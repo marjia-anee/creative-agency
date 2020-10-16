@@ -19,7 +19,7 @@ const Feedback = () => {
 
 
     return (
-        <section className="container mt-5">
+        <section style={{ marginBottom: '15%'}} className="container mt-5 ">
             <div>
             <h2 className = "text-center">Clients <span className="text-success"> Feedback</span></h2>
 
