@@ -20,9 +20,9 @@ const Services = () => {
     
 
     return (
-        <section style={{marginTop: '12%', marginBottom: '20%'}} className = "container">
+        <section style={{ marginBottom: '10%'}} className = "container">
             <div className = "text-center">
-                <h3>Provide awesome <span className="text-success"> services</span></h3>
+                <h3>Provide awesome <span className="text-primary"> services</span></h3>
             </div>
             <div className="d-flex justify-content-center">
             <div className = "row w-75 mt-5 pt-5">

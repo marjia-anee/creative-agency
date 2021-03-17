@@ -21,7 +21,7 @@ const Feedback = () => {
     return (
         <section style={{ marginBottom: '15%'}} className="container mt-5 ">
             <div>
-            <h2 className = "text-center">Clients <span className="text-success"> Feedback</span></h2>
+            <h2 className = "text-center">Clients <span className="text-primary"> Feedback</span></h2>
 
             </div>
             <div className = "row d-flex justify-content-center">

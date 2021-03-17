@@ -15,7 +15,7 @@ const CarouselPart = () => {
             height: '100%', background: '#111430',backgroundSize: 'cover',marginBottom: '10%'
         }} className="mt-5 p-5 ">
                 <div  className = "m-3 p-2">
-                    <h2 className="text-center" style={{color: 'white',}}>Here are some of <span className="text-success"> our works</span></h2>
+                    <h2 className="text-center" style={{color: 'white',}}>Here are some of <span className="text-primary"> our works</span></h2>
                 </div>
 
                 <Carousel

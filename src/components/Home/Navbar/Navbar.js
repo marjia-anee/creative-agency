@@ -24,7 +24,7 @@ const Navbar = () => {
                     <a class="nav-link mr-5 " href="#">Contact Us</a>
                     </li>
 
-                    <button class="btn btn-dark">Login</button>
+                    <button class="btn btn-primary">Login</button>
                 
                 </ul>
             
